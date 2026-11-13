@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WinRepair Toolkit — бесплатная утилита для ремонта Windows 10 и 11</title>
+  <meta name="description" content="WinRepair Toolkit находит и исправляет типичные неполадки Windows 10 и 11: системные файлы, сеть, Центр обновления, диски, автозагрузка. Бесплатно, с открытым кодом на GitHub.">
+  <meta name="theme-color" content="#16306A">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="canonical" href="https://your-username.github.io/winrepair-toolkit/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="WinRepair Toolkit — ремонт Windows в один клик">
+  <meta property="og:description" content="Бесплатная утилита с открытым кодом: диагностика и исправление неполадок Windows 10 и 11.">
+  <meta property="og:url" content="https://your-username.github.io/winrepair-toolkit/">
+  <meta property="og:image" content="https://your-username.github.io/winrepair-toolkit/img/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "WinRepair Toolkit",
+    "operatingSystem": "Windows 10, Windows 11",
+    "inLanguage": ["ru", "en"],
+    "applicationCategory": "UtilitiesApplication",
+    "fileSize": "1.8 MB",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Бесплатная утилита для диагностики и ремонта Windows 10 и 11 с открытым исходным кодом."
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Перейти к содержимому</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ===== Шапка ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="WinRepair Toolkit — на главную">
+        <img src="img/logo.png" width="34" height="34" alt="">
+        <span>WinRepair <b>Toolkit</b></span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Основное меню" data-i18n-attr="aria-label:nav.label">
+        <a href="#features" data-i18n="nav.features">Возможности</a>
+        <a href="#how" data-i18n="nav.how">Как работает</a>
+        <a href="#download" data-i18n="nav.download">Скачать</a>
+        <a href="#faq" data-i18n="nav.faq">Вопросы</a>
+        <a href="#comments" data-i18n="nav.comments">Отзывы</a>
+        <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="gh-link js-gh-repo" href="#" target="_blank" rel="noopener" aria-label="Репозиторий на GitHub" data-i18n-attr="aria-label:gh.repoLabel">
+          <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                  </a>
+        <button class="icon-btn js-lang" type="button" aria-label="Switch to English" data-i18n-attr="aria-label:lang.switch">EN</button>
+        <a class="btn btn-primary btn-sm header-cta" href="#download" data-i18n="cta.download">Скачать</a>
+        <button class="icon-btn burger js-burger" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню" data-i18n-attr="aria-label:nav.open">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="aurora a1"></span><span class="aurora a2"></span><span class="aurora a3"></span><span class="aurora a4"></span>
+        <span class="hero-grid-dots"></span>
+        <span class="spotlight"></span>
+      </div>
+
+      <div class="container hero-inner">
+        <a class="hero-badge" href="#download">
+          <span class="dot"></span>
+          <span data-i18n="hero.badge">Бесплатно и без установки</span>
+          <span class="badge-ver js-version-badge">v1.0</span>
+        </a>
+
+        <h1 class="hero-title" data-i18n="hero.title">Windows снова работает как надо</h1>
+        <p class="hero-lead" data-i18n="hero.lead">Диагностика и ремонт Windows 10 и 11 в одном маленьком файле: системные файлы, загрузка, диски, сеть, драйверы, работа оффлайн с Windows, также в среде «Windows RE + WinRepair».</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-glow js-dl-primary" href="#download">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17V3zM5 19h14v2H5z"/></svg>
+            <span data-i18n="hero.download">Скачать для Windows</span>
+          </a>
+          <a class="btn btn-glass js-gh-repo" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span>GitHub</span>
+            <span class="btn-stars js-gh-stars" hidden></span>
+          </a>
+        </div>
+        <p class="hero-meta"><span class="js-file-meta">winrepair.exe, 1,8 МБ</span><span class="sep" aria-hidden="true"></span><span data-i18n="hero.meta">Windows 10 и 11, x64 и x86</span><span class="sep" aria-hidden="true"></span><span data-i18n="hero.lang">Русский и English</span></p>
+
+        <!-- Скриншот программы в 3D-рамке -->
+        <div class="showcase js-showcase">
+          <div class="showcase-glow" aria-hidden="true"></div>
+          <figure class="showcase-frame">
+            <img src="img/screenshot.png" width="1280" height="388" alt="Главное окно WinRepair Toolkit: выбор целевой Windows, вкладки диагностики и инструменты ремонта" data-i18n-attr="alt:shot.alt" fetchpriority="high">
+          </figure>
+          <ul class="chips" aria-hidden="true">
+            <li class="chip c1" style="--c: var(--green)"><b>✓</b><span data-i18n="chip.1">Системные файлы восстановлены</span></li>
+            <li class="chip c2" style="--c: var(--blue)"><b>●</b><span data-i18n="chip.2">S.M.A.R.T.: диск в норме</span></li>
+            <li class="chip c3" style="--c: var(--orange)"><b>↻</b><span data-i18n="chip.3">Сеть сброшена, интернет работает</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Что умеет ===== -->
+    <section class="section" id="features">
+      <div class="container">
+        <header class="section-head">
+          <h2 data-i18n="features.title">Что умеет WinRepair Toolkit</h2>
+          <p data-i18n="features.lead">Диагностика и ремонт в одном окне — для работающей Windows и для той, что не загружается: выберите систему на другом диске или из среды восстановления.</p>
+        </header>
+
+        <ul class="legend" aria-label="Категории инструментов" data-i18n-attr="aria-label:features.cats">
+          <li style="--c: var(--blue)" data-i18n="legend.diag">Диагностика, только чтение</li>
+          <li style="--c: var(--teal)" data-i18n="legend.wizard">Мастера и сценарии</li>
+          <li style="--c: var(--orange)" data-i18n="legend.repair">Ремонт с подтверждением</li>
+          <li style="--c: var(--green)" data-i18n="legend.protect">Защита и сохранение</li>
+        </ul>
+
+        <ul class="tiles">
+          <!-- Диагностика -->
+          <li class="tile glass" style="--c: var(--blue); --t: var(--blue-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <rect class="f" x="8" y="5" width="48" height="31" rx="4"/>
+              <path d="M26 42h12M32 36v6"/>
+              <path class="s" d="M17 28v-6M25 28v-11M33 28v-8M41 28v-14M49 28V24"/>
+            </svg></div>
+            <h3 data-i18n="t.overview.t">Обзор системы</h3>
+            <p data-i18n="t.overview.d">Версия и сборка Windows, процессор, память, права — сразу при запуске.</p>
+          </li>
+          <li class="tile glass" style="--c: var(--blue); --t: var(--blue-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <rect class="f" x="10" y="5" width="44" height="38" rx="5"/>
+              <circle cx="30" cy="22" r="10"/>
+              <circle class="dotc" cx="30" cy="22" r="2.5"/>
+              <path d="M46 11L33 21"/>
+              <path class="s" d="M15 37h7l2-4 3 8 2-4h6"/>
+            </svg></div>
+            <h3 data-i18n="t.disks.t">Диски и S.M.A.R.T.</h3>
+            <p data-i18n="t.disks.d">Здоровье SSD и HDD, разделы, свободное место и ранние признаки отказа.</p>
+          </li>
+          <li class="tile glass" style="--c: var(--blue); --t: var(--blue-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <rect class="solid" x="6" y="6" width="40" height="28" rx="4"/>
+              <path class="w" d="M13 14h.01M13 19h.01M18 14.5q2 2 0 5M13 27h18"/>
+              <circle class="f" cx="45" cy="32" r="9"/>
+              <path d="M51.5 38.5L58 45"/>
+            </svg></div>
+            <h3 data-i18n="t.bsod.t">Драйверы и BSOD</h3>
+            <p data-i18n="t.bsod.d">Разбор синих экранов, проблемные устройства и сбойные драйверы.</p>
+          </li>
+          <li class="tile glass" style="--c: var(--blue); --t: var(--blue-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <path class="f" d="M14 4h26l10 10v30H14z"/>
+              <path d="M40 4v10h10M21 18h12M21 25h20M21 32h10"/>
+              <path class="warn" d="M44 28l9 15H35z"/>
+              <path class="w" d="M44 34v3M44 40v.01"/>
+            </svg></div>
+            <h3 data-i18n="t.events.t">Журналы событий</h3>
+            <p data-i18n="t.events.d">Критические ошибки и предупреждения Windows, отобранные по важности.</p>
+          </li>
+
+          <!-- Ремонт -->
+          <li class="tile glass" style="--c: var(--orange); --t: var(--orange-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <path class="f" d="M32 4l18 6v12c0 11-8 18-18 22-10-4-18-11-18-22V10z"/>
+              <path class="s" d="M24 24l6 6 11-12"/>
+            </svg></div>
+            <h3 data-i18n="t.integrity.t">Целостность Windows</h3>
+            <p data-i18n="t.integrity.d">Проверка и восстановление системных файлов и хранилища компонентов.</p>
+          </li>
+          <li class="tile glass" style="--c: var(--orange); --t: var(--orange-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <rect class="f" x="6" y="6" width="52" height="36" rx="5"/>
+              <path d="M22 15v9M16.5 18.5a8.5 8.5 0 1011 0"/>
+              <path class="s" d="M36 16h14M36 24h14M36 32h9"/>
+            </svg></div>
+            <h3 data-i18n="t.boot.t">Загрузка и BCD</h3>
+            <p data-i18n="t.boot.d">Хранилище загрузки, записи и режимы — когда Windows не стартует.</p>
+          </li>
+          <li class="tile glass" style="--c: var(--orange); --t: var(--orange-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <path class="f" d="M14 26l10-5 10 5v11l-10 5-10-5z"/>
+              <path class="f" d="M30 26l10-5 10 5v11l-10 5-10-5z"/>
+              <path class="solid" d="M22 11l10-5 10 5v11l-10 5-10-5z"/>
+              <path class="w" d="M22 11l10 5 10-5M32 16v11"/>
+            </svg></div>
+            <h3 data-i18n="t.registry.t">Офлайн-реестр</h3>
+            <p data-i18n="t.registry.d">Просмотр и правка реестра Windows, даже если она не загружается.</p>
+          </li>
+          <li class="tile glass" style="--c: var(--orange); --t: var(--orange-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <circle class="f" cx="28" cy="24" r="18"/>
+              <path d="M10 24h36M28 6c-6 6-6 30 0 36M28 6c6 6 6 30 0 36"/>
+              <circle class="solid" cx="48" cy="36" r="8"/>
+              <path class="w" d="M44.5 36l2.5 2.5 4.5-5"/>
+            </svg></div>
+            <h3 data-i18n="t.net.t">Сеть и интернет</h3>
+            <p data-i18n="t.net.d">Сброс сетевого стека, DNS и прокси, когда «интернет есть, но не работает».</p>
+          </li>
+
+          <!-- Мастера -->
+          <li class="tile glass" style="--c: var(--teal); --t: var(--teal-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <ellipse class="f" cx="28" cy="27" rx="10" ry="13"/>
+              <path d="M28 14v26M18 23H10M18 31h-8M38 23h8M38 31h8M23 15l-4-6M33 15l4-6"/>
+              <circle class="solid" cx="48" cy="38" r="8"/>
+              <path class="w" d="M45 35l6 6M51 35l-6 6"/>
+            </svg></div>
+            <h3 data-i18n="t.malware.t">После заражения</h3>
+            <p data-i18n="t.malware.d">Мастер устраняет последствия вирусов: прокси, политики, ассоциации, службы.</p>
+          </li>
+          <li class="tile glass" style="--c: var(--teal); --t: var(--teal-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <circle class="f" cx="32" cy="24" r="19"/>
+              <circle cx="32" cy="24" r="9"/>
+              <path class="s" d="M32 5v10M32 33v10M13 24h10M41 24h10"/>
+            </svg></div>
+            <h3 data-i18n="t.winre.t">Среда восстановления</h3>
+            <p data-i18n="t.winre.d">Вход в WinRE и штатное меню восстановления Windows в пару кликов.</p>
+          </li>
+
+          <!-- Защита -->
+          <li class="tile glass" style="--c: var(--green); --t: var(--green-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <circle class="f" cx="32" cy="24" r="18"/>
+              <path class="s" d="M32 14v10l7 4"/>
+              <path d="M14 24a18 18 0 1 0 5.3-12.7L14 17M14 8v9h9"/>
+            </svg></div>
+            <h3 data-i18n="t.restore.t">Точки восстановления</h3>
+            <p data-i18n="t.restore.d">Состояние защиты системы, создание точки и откат через rstrui.</p>
+          </li>
+          <li class="tile glass" style="--c: var(--green); --t: var(--green-t)">
+            <div class="thumb"><svg viewBox="0 0 64 48" aria-hidden="true">
+              <path class="f" d="M8 14a3 3 0 013-3h13l4 5h25a3 3 0 013 3v20a3 3 0 01-3 3H11a3 3 0 01-3-3z"/>
+              <path class="s" d="M32 21v13M26 28l6 6 6-6"/>
+            </svg></div>
+            <h3 data-i18n="t.backup.t">Отчёты и резервные копии</h3>
+            <p data-i18n="t.backup.d">Журналы и отчёты на диск, просмотр и очистка резервных копий.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Как работает (настоящая последовательность) ===== -->
+    <section class="section section-alt" id="how">
+      <div class="container">
+        <header class="section-head">
+          <h2 data-i18n="how.title">Как проходит ремонт</h2>
+          <p data-i18n="how.lead">Сначала только диагностика, потом ремонт по вашему выбору. Время зависит от скорости диска и числа найденных проблем.</p>
+        </header>
+        <ol class="steps">
+          <li class="glass">
+            <span class="step-n">1</span>
+            <h3 data-i18n="how.s1.t">Диагностика</h3>
+            <p data-i18n="how.s1.d">Программа проверяет систему и показывает список найденных проблем. Ничего не меняется без вашего согласия.</p>
+          </li>
+          <li class="glass">
+            <span class="step-n">2</span>
+            <h3 data-i18n="how.s2.t">Точка восстановления</h3>
+            <p data-i18n="how.s2.d">Перед ремонтом создайте точку восстановления: программа показывает состояние защиты и создаёт точку в пару кликов.</p>
+          </li>
+          <li class="glass">
+            <span class="step-n">3</span>
+            <h3 data-i18n="how.s3.t">Исправление</h3>
+            <p data-i18n="how.s3.d">Выбранные действия выполняются по очереди, в журнале видно каждую команду и её результат.</p>
+          </li>
+          <li class="glass">
+            <span class="step-n">4</span>
+            <h3 data-i18n="how.s4.t">Отчёт</h3>
+            <p data-i18n="how.s4.d">В конце — понятный итог: что было исправлено, что требует внимания и нужна ли перезагрузка.</p>
+          </li>
+        </ol>
+
+        <h3 class="tools-title" data-i18n="tools.title">Некоторые инструменты, используемые в процессе ремонта</h3>
+        <ul class="tools">
+          <li class="glass" style="--c: var(--teal)">
+            <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.6M12 17v.01"/></svg></span>
+            <div><h4 data-i18n="tools.1.t">Мастер «Что случилось?»</h4><p data-i18n="tools.1.d">Диагностика по симптому: опишите проблему — мастер подскажет проверки.</p></div>
+          </li>
+          <li class="glass" style="--c: var(--teal)">
+            <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v13H5z"/><path d="M8 10l1.5 1.5L12 9M8 15.5l1.5 1.5L12 14.5M14 10.5h2M14 16h2"/></svg></span>
+            <div><h4 data-i18n="tools.2.t">Сценарии ремонта (playbooks)</h4><p data-i18n="tools.2.d">Готовые последовательности шагов для типовых неполадок.</p></div>
+          </li>
+          <li class="glass" style="--c: var(--blue)">
+            <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M12 15h5"/></svg></span>
+            <div><h4 data-i18n="tools.3.t">Каталог команд</h4><p data-i18n="tools.3.d">Все действия программы в одном списке с описанием.</p></div>
+          </li>
+          <li class="glass" style="--c: var(--orange)">
+            <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="13" rx="5" ry="6.5"/><path d="M12 6.5V19.5M7 11H3M7 15H3M17 11h4M17 15h4M9.5 7L8 4.5M14.5 7L16 4.5"/></svg></span>
+            <div><h4 data-i18n="tools.4.t">Мастер исправлений после заражения</h4><p data-i18n="tools.4.d">Устраняет последствия вирусов: прокси, политики, ассоциации, службы.</p></div>
+          </li>
+        </ul>
+
+        <h3 class="tools-title" id="safety" data-i18n="safe.title">Почему этому можно доверять</h3>
+        <ul class="tools trust-row">
+          <li class="glass" style="--c: var(--blue)">
+            <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>
+            <div><h4 data-i18n="safe.1.t">Открытый исходный код</h4><p data-i18n="safe.1.d">Весь код лежит на GitHub. Любой может посмотреть, что именно делает программа.</p></div>
+          </li>
+          <li class="glass" style="--c: var(--teal)">
+            <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg></span>
+            <div><h4 data-i18n="safe.2.t">Только встроенные средства Windows</h4><p data-i18n="safe.2.d">Ремонт выполняется штатными средствами Microsoft, без сторонних «чудо-драйверов».</p></div>
+          </li>
+          <li class="glass" style="--c: var(--orange)">
+            <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <div><h4 data-i18n="safe.3.t">Изменения только с подтверждением</h4><p data-i18n="safe.3.d">Диагностика ничего не меняет. Всё, что затрагивает систему, выполняется только после вашего согласия.</p></div>
+          </li>
+          <li class="glass" style="--c: var(--green)">
+            <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.6-6.4L3 8M3 3v5h5M12 7v5l3 2"/></svg></span>
+            <div><h4 data-i18n="safe.4.t">Всё можно отменить</h4><p data-i18n="safe.4.d">Точки восстановления и резервные копии позволяют откатить любое изменение.</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Скачать ===== -->
+    <section class="section section-dark" id="download">
+      <div class="container dl-wrap">
+        <div class="dl-main">
+          <img class="dl-appicon" src="img/logo.png" width="64" height="64" alt="">
+          <h2 data-i18n="dl.title">Скачать WinRepair Toolkit</h2>
+          <p class="dl-sub"><span data-i18n="dl.sub">Один файл, без установки. Запустите от имени администратора.</span></p>
+
+          <div class="dl-buttons">
+            <a class="btn btn-primary btn-glow js-dl-x64" href="#" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17V3zM5 19h14v2H5z"/></svg>
+              <span data-i18n="dl.x64">Скачать 64-бит</span>
+            </a>
+            <a class="btn btn-glass js-dl-x86" href="#" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17V3zM5 19h14v2H5z"/></svg>
+              <span data-i18n="dl.x86">Скачать 32-бит</span>
+            </a>
+          </div>
+          <p class="dl-hint js-arch-hint" data-i18n="dl.hint">Не знаете, какую выбрать? Почти все современные компьютеры — 64-бит.</p>
+
+          <dl class="dl-facts">
+            <div><dt data-i18n="dl.f.ver">Версия</dt><dd class="js-version">1.0.0</dd></div>
+            <div><dt data-i18n="dl.f.size">Размер</dt><dd class="js-size">1,8 МБ</dd></div>
+            <div><dt data-i18n="dl.f.os">Система</dt><dd>Windows 10, 11</dd></div>
+            <div><dt data-i18n="dl.f.date">Дата</dt><dd class="js-release-date">—</dd></div>
+            <div><dt data-i18n="dl.f.lang">Язык</dt><dd>RU / EN</dd></div>
+          </dl>
+
+          <div class="checksum">
+            <span data-i18n="dl.sha">SHA-256</span>
+            <code class="js-sha">появится после публикации релиза</code>
+            <button type="button" class="icon-btn js-copy-sha" aria-label="Скопировать" data-i18n-attr="aria-label:dl.copy">
+              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 00-2 2v14h2V3h12zm3 4H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11z"/></svg>
+            </button>
+          </div>
+          <p class="dl-more"><a class="js-gh-releases" href="#" target="_blank" rel="noopener" data-i18n="dl.all">Все версии на GitHub</a><span class="js-dl-count"></span></p>
+        </div>
+
+        <aside class="dl-side">
+          <h3 data-i18n="dl.changes">Что нового</h3>
+          <ul class="changelog js-changelog">
+            <li class="muted" data-i18n="dl.changesEmpty">Список изменений подтянется из GitHub Releases после первого релиза.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+      <div class="container wide-faq">
+        <header class="section-head">
+          <h2 data-i18n="faq.title">Частые вопросы</h2>
+        </header>
+        <div class="faq">
+          <details class="glass">
+            <summary data-i18n="faq.1.q">Программа правда бесплатная?</summary>
+            <p data-i18n="faq.1.a">Да. WinRepair Toolkit распространяется бесплатно, с открытым исходным кодом. Никаких платных версий, пробных периодов и рекламы.</p>
+          </details>
+          <details class="glass">
+            <summary data-i18n="faq.7.q">Есть ли английская версия программы?</summary>
+            <p data-i18n="faq.7.a">Да. Язык интерфейса переключается кнопкой English в окне программы — программа быстро перезапускается на выбранном языке.</p>
+          </details>
+          <details class="glass">
+            <summary data-i18n="faq.2.q">Windows SmartScreen предупреждает при запуске. Это нормально?</summary>
+            <p data-i18n="faq.2.a">Да, так бывает с новыми программами без дорогой цифровой подписи. Сверьте контрольную сумму SHA-256 с указанной на этой странице, затем нажмите «Подробнее» → «Выполнить в любом случае».</p>
+          </details>
+          <details class="glass">
+            <summary data-i18n="faq.3.q">Можно ли что-то сломать?</summary>
+            <p data-i18n="faq.3.a">Программа использует только штатные средства Windows и перед ремонтом создаёт точку восстановления. Если результат не понравится, откатитесь через «Восстановление системы».</p>
+          </details>
+          <details class="glass">
+            <summary data-i18n="faq.4.q">Зачем нужны права администратора?</summary>
+            <p data-i18n="faq.4.a">Команды вроде SFC, DISM и сброса сети работают только с правами администратора — так устроена сама Windows.</p>
+          </details>
+          <details class="glass">
+            <summary data-i18n="faq.5.q">Поможет ли программа против вирусов?</summary>
+            <p data-i18n="faq.5.a">Нет, это не антивирус. Но она исправляет последствия: сбитые настройки прокси, отключённые службы, повреждённые системные файлы. Сначала проверьте компьютер антивирусом.</p>
+          </details>
+          <details class="glass">
+            <summary data-i18n="faq.6.q">Как сообщить об ошибке или предложить функцию?</summary>
+            <p data-i18n="faq.6.a">Создайте issue на GitHub или напишите в форму внизу страницы. Приложите отчёт о системе — так проблему найти гораздо быстрее.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Комментарии (Giscus) ===== -->
+    <section class="section section-alt" id="comments">
+      <div class="container narrow">
+        <header class="section-head">
+          <h2 data-i18n="cm.title">Отзывы и обсуждение</h2>
+          <p data-i18n="cm.lead">Поделитесь, что помогло, задайте вопрос или расскажите о проблеме. Для комментария нужен аккаунт GitHub.</p>
+        </header>
+        <div class="comments js-comments">
+          <div class="glass comments-setup js-comments-setup">
+            <p><b data-i18n="cm.setupT">Комментарии ещё не подключены.</b></p>
+            <p data-i18n="cm.setupD">Владельцу сайта: включите Discussions в репозитории, получите параметры на giscus.app и впишите их в файл js/config.js. Подробности — в README.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Контакты ===== -->
+    <section class="section" id="contacts">
+      <div class="container">
+        <header class="section-head">
+          <h2 data-i18n="ct.title">Связаться с автором</h2>
+          <p data-i18n="ct.lead">Вопросы, предложения, сотрудничество — пишите любым удобным способом.</p>
+        </header>
+        <div class="contacts">
+          <ul class="contact-cards">
+            <li><a class="glass contact-card js-email" href="#" style="--c: var(--blue)">
+              <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg></span>
+              <span><small data-i18n="ct.email">Почта</small><b class="js-email-text">[email]</b></span>
+            </a></li>
+            <li><a class="glass contact-card js-telegram" href="#" target="_blank" rel="noopener" style="--c: var(--teal)">
+              <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l12-9"/></svg></span>
+              <span><small>Telegram</small><b class="js-telegram-text">[telegram]</b></span>
+            </a></li>
+            <li><a class="glass contact-card js-gh-profile" href="#" target="_blank" rel="noopener" style="--c: var(--orange)">
+              <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></span>
+              <span><small>GitHub</small><b class="js-gh-profile-text">[github]</b></span>
+            </a></li>
+            <li><a class="glass contact-card js-gh-issues" href="#" target="_blank" rel="noopener" style="--c: var(--green)">
+              <span class="trust-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.01"/></svg></span>
+              <span><small data-i18n="ct.bugs">Ошибки и идеи</small><b data-i18n="ct.issues">GitHub Issues</b></span>
+            </a></li>
+          </ul>
+
+          <form class="glass contact-form js-contact-form" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="cf-name" data-i18n="ct.f.name">Имя</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required>
+                <span class="field-err" data-i18n="ct.f.nameErr">Укажите имя</span>
+              </div>
+              <div class="field">
+                <label for="cf-email" data-i18n="ct.f.email">Электронная почта</label>
+                <input id="cf-email" name="email" type="email" autocomplete="email" required>
+                <span class="field-err" data-i18n="ct.f.emailErr">Укажите почту в формате name@example.com</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="cf-topic" data-i18n="ct.f.topic">Тема</label>
+              <select id="cf-topic" name="topic">
+                <option value="question" data-i18n="ct.f.t1">Вопрос по программе</option>
+                <option value="bug" data-i18n="ct.f.t2">Сообщение об ошибке</option>
+                <option value="idea" data-i18n="ct.f.t3">Идея или предложение</option>
+                <option value="other" data-i18n="ct.f.t4">Другое</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cf-msg" data-i18n="ct.f.msg">Сообщение</label>
+              <textarea id="cf-msg" name="message" rows="4" required minlength="10"></textarea>
+              <span class="field-err" data-i18n="ct.f.msgErr">Напишите хотя бы пару слов (от 10 символов)</span>
+            </div>
+            <div class="form-foot">
+              <button class="btn btn-primary btn-glow" type="submit" data-i18n="ct.f.send">Отправить сообщение</button>
+              <p class="form-status js-form-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Подвал ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#top"><img src="img/logo.png" width="28" height="28" alt=""><span>WinRepair <b>Toolkit</b></span></a>
+        <p data-i18n="ft.about">Бесплатная утилита для ремонта Windows с открытым исходным кодом.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Ссылки в подвале" data-i18n-attr="aria-label:ft.nav">
+        <a href="#features" data-i18n="nav.features">Возможности</a>
+        <a href="#download" data-i18n="nav.download">Скачать</a>
+        <a href="#faq" data-i18n="nav.faq">Вопросы</a>
+        <a class="js-gh-repo" href="#" target="_blank" rel="noopener">GitHub</a>
+        <a class="js-gh-license" href="#" target="_blank" rel="noopener" data-i18n="ft.license">Лицензия</a>
+        <a href="#privacy" class="js-privacy-open" data-i18n="ft.privacy">Конфиденциальность</a>
+      </nav>
+      <p class="footer-copy">© <span class="js-year">2026</span> <span class="js-author">[Автор]</span>. <span data-i18n="ft.ms">Windows — товарный знак Microsoft Corporation. Проект не связан с Microsoft.</span></p>
+    </div>
+  </footer>
+
+  <!-- Политика конфиденциальности -->
+  <dialog class="modal js-privacy" aria-labelledby="privacy-title">
+    <h2 id="privacy-title" data-i18n="pv.title">Конфиденциальность</h2>
+    <p data-i18n="pv.1">Программа WinRepair Toolkit не собирает и не отправляет никаких данных.</p>
+    <p data-i18n="pv.2">Сайт не использует cookies для отслеживания. Комментарии работают через сервис Giscus и GitHub Discussions и подчиняются правилам GitHub. Сообщения из формы обратной связи используются только для ответа вам.</p>
+    <button type="button" class="btn btn-primary js-privacy-close" data-i18n="pv.close">Понятно</button>
+  </dialog>
+
+  <button class="to-top js-to-top" type="button" aria-label="Наверх" data-i18n-attr="aria-label:totop">
+    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 5l7 7-1.4 1.4-4.6-4.6V20h-2V8.8l-4.6 4.6L5 12z"/></svg>
+  </button>
+  <div class="toast js-toast" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
