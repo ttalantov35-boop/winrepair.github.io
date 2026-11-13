@@ -106,8 +106,6 @@ window.I18N = {
     'dl.sha': 'SHA-256',
     'dl.copy': 'Copy',
     'dl.all': 'All versions on GitHub',
-    'dl.changes': 'What’s new',
-    'dl.changesEmpty': 'The changelog will load from GitHub Releases after the first release.',
 
     'faq.title': 'Frequently asked questions',
     'faq.1.q': 'Is it really free?',

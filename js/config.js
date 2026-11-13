@@ -25,7 +25,7 @@ window.SITE_CONFIG = {
 
   // Комментарии Giscus: значения берутся на https://giscus.app
   giscus: {
-    repo: '',                        // 'ttalantov35-boop/winrepair-toolkit'
+    repo: '',                        // 'ttalantov35-boop/winrepair.github.io'
     repoId: '',                      // 'R_kgDO...'
     category: 'General',
     categoryId: ''                   // 'DIC_kwDO...'

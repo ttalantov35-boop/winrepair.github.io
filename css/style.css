@@ -402,13 +402,7 @@ a.glass:hover, .tile.glass:hover, .steps .glass:hover {
 .section-dark h2, .section-dark h3, .section-dark b, .section-dark strong { color: #fff; }
 
 .dl-wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s4); max-width: 760px; }
-.dl-main, .dl-side { min-width: 0; }
-.dl-main, .dl-side {
-  padding: var(--s6); border-radius: 20px;
-  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
-  backdrop-filter: blur(10px);
-}
-.dl-main { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.dl-main, .dl-main, .dl-main { text-align: center; display: flex; flex-direction: column; align-items: center; }
 .dl-appicon { width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 16px 40px -10px #2F7BEA; }
 .dl-main h2 { margin-top: var(--s4); font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
 .dl-sub { margin-top: var(--s2); color: var(--muted); }
@@ -432,16 +426,6 @@ a.glass:hover, .tile.glass:hover, .steps .glass:hover {
 .dl-more { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; margin-top: var(--s4); font-size: .9rem; color: var(--muted); }
 .dl-more a { color: #BFD3FF; }
 
-.dl-side { padding: var(--s5) var(--s6); }
-.dl-side h3 { font-size: 1rem; margin-bottom: var(--s3); }
-.changelog { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s4); font-size: .92rem; position: relative; }
-.changelog li { padding-left: 18px; position: relative; }
-.changelog li:not(.muted)::before { content: ''; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: #3FD06A; box-shadow: 0 0 0 4px rgba(63,208,106,.15); }
-.changelog .muted { color: var(--muted); padding-left: 0; }
-.changelog a { color: #BFD3FF; font-weight: 600; text-decoration: none; }
-.changelog a:hover { text-decoration: underline; }
-.changelog time { color: var(--muted); font-size: .82rem; margin-left: 8px; }
-.changelog p { color: var(--text); margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
 /* ---------- FAQ ---------- */
 .faq { display: grid; gap: var(--s4); }
@@ -614,7 +598,7 @@ a.glass:hover, .tile.glass:hover, .steps .glass:hover {
   .hero-meta .sep { display: none; }
   .hero-meta { flex-direction: column; gap: 2px; }
   .hero-badge { font-size: .8rem; }
-  .dl-main, .dl-side, .contact-form { padding: var(--s5); }
+  .dl-main, .contact-form { padding: var(--s5); }
   .footer-inner { grid-template-columns: 1fr; }
   .gh-link { display: none; }
 }
