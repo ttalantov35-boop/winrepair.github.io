@@ -5,7 +5,7 @@ window.SITE_CONFIG = {
   // GitHub: владелец и имя репозитория программы
   github: {
     owner: 'ttalantov35-boop',          // ваш логин на GitHub
-    repo: 'winrepair'        // имя репозитория
+    repo: 'WinRepair'        // имя репозитория программы (там лежат релизы)
   },
 
   // Как распознать файлы в релизе (по части имени, без учёта регистра).
@@ -25,7 +25,7 @@ window.SITE_CONFIG = {
 
   // Комментарии Giscus: значения берутся на https://giscus.app
   giscus: {
-    repo: '',                        // 'your-username/winrepair-toolkit'
+    repo: '',                        // 'ttalantov35-boop/winrepair-toolkit'
     repoId: '',                      // 'R_kgDO...'
     category: 'General',
     categoryId: ''                   // 'DIC_kwDO...'

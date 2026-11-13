@@ -188,7 +188,7 @@
   const fmtSize = b => b > 1048576 ? (b / 1048576).toLocaleString(t('locale'), { maximumFractionDigits: 1 }) + ' ' + t('mb') : Math.round(b / 1024) + ' ' + t('kb');
   const fmtDate = s => new Date(s).toLocaleDateString(t('locale'), { day: 'numeric', month: 'long', year: 'numeric' });
   const exes = rel => (rel.assets || []).filter(a => /\.exe$/i.test(a.name));
-  const findBy = (list, keys) => list.find(a => keys.some(k => a.name.toLowerCase().includes(k)));
+  const findBy = (list, keys) => list.find(a => keys.some(k => a.name.toLowerCase().includes(String(k).toLowerCase())));
 
   // Определение разрядности Windows посетителя
   let arch = /WOW64|Win64|x64|amd64/i.test(navigator.userAgent) ? 'x64' : (/Windows/i.test(navigator.userAgent) ? 'x86' : 'x64');
@@ -245,7 +245,7 @@
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.href = r.html_url; a.target = '_blank'; a.rel = 'noopener';
-      a.textContent = r.name || r.tag_name;
+      a.textContent = r.tag_name;   // номер версии, например v1.0.0-rc9
       const time = document.createElement('time');
       time.dateTime = r.published_at; time.textContent = fmtDate(r.published_at);
       const p = document.createElement('p');
