@@ -25,10 +25,10 @@ window.SITE_CONFIG = {
 
   // Комментарии Giscus: значения берутся на https://giscus.app
   giscus: {
-    repo: '',                        // 'ttalantov35-boop/winrepair.github.io'
-    repoId: '',                      // 'R_kgDO...'
-    category: 'General',
-    categoryId: ''                   // 'DIC_kwDO...'
+    repo: 'ttalantov35-boop/winrepair.github.io',
+    repoId: 'R_kgDOVtaP6A',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOVtaP6M4DLGi1'
   },
 
   // Форма обратной связи: адрес Formspree (https://formspree.io).
